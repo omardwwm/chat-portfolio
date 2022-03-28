@@ -1,6 +1,7 @@
 const http = require("http");
 const express = require("express");
 const app = express();
+app.use(express.static('./server.js'));
 const server = http.createServer(app);
 const socket = require("socket.io");
 const io = socket(server);
