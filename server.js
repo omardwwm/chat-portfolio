@@ -4,7 +4,7 @@ const app = express();
 const server = http.createServer(app);
 const socket = require("socket.io");
 const io = socket(server);
-const port = 8000 || process.env.PORT;
+const port = process.env.PORT || 8000;
 
 io.on("connection", socket => {
     socket.emit("your id", socket.id);
