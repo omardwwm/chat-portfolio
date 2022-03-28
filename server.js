@@ -4,7 +4,7 @@ const app = express();
 const server = http.createServer(app);
 const socket = require("socket.io");
 const io = socket(server);
-const PORT = 8000 || process.env.PORT;
+const port = 8000 || process.env.PORT;
 
 io.on("connection", socket => {
     socket.emit("your id", socket.id);
@@ -14,4 +14,4 @@ io.on("connection", socket => {
     })
 })
 
-server.listen(PORT, () => console.log(`server node-express-socket is running on port ${PORT}`));
+server.listen(port, () => console.log(`server node-express-socket is running on port ${port}`));
