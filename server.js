@@ -13,6 +13,7 @@ const port = process.env.PORT || 8000;
 
 io.on("connection", socket => {
     socket.emit("your id", socket.id);
+    socket.emit("time", socket.time)
     socket.on("send message", body => {
         // console.log(body);
         io.emit("message", body)
