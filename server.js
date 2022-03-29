@@ -3,9 +3,13 @@ const express = require("express");
 const app = express();
 const server = http.createServer(app);
 const socket = require("socket.io");
-const io = socket(server);
+const io = socket(server, {
+    cors: {
+        origins: ['http://localhost:3000']
+    }
+});
 const port = process.env.PORT || 8000;
-io.origins('*:*')
+// io.origins('*:*')
 
 io.on("connection", socket => {
     socket.emit("your id", socket.id);
