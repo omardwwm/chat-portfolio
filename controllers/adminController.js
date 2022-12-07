@@ -18,7 +18,7 @@ exports.createAdmin = async (req, res) => {
 exports.getAdmin = async (req, res) => {
     try {
         let admin = await Admin.find();
-        res.status(200).json(admin._id);
+        res.status(200).json(admin.id);
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
